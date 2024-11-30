@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Editor with Syntax Highlighting</title>
+    <!-- Link to CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <!-- Link to Custom CSS -->
+    <link rel="stylesheet" href="/css/styles_html.css">
+    <script type="module" src="/js/dashboard.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+          <h2>Welcome, <span id="loggedUserfname"></span></h2>
+          <ul>
+            <li><a href="/templates/menu.html" title="Add or Edit Menu">Add or Edit Menu</a></li>
+            <li><button id="logoutButton" title="Logout">Logout</button></li>
+          </ul>
+        </nav>
+      </header>
+    <div class="editor-container">
+        <header>
+            <button id="run-btn">Run</button>
+        </header>
+        <div class="editor">
+            <textarea id="html-code"></textarea>
+            <iframe id="output" sandbox="allow-scripts"></iframe>
+        </div>
+    </div>
+    <!-- Link to CodeMirror JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+    <!-- Link to Custom JS -->
+    <script src="/js/script_html.js"></script>
+</body>
+</html>
