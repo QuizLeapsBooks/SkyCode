@@ -11,28 +11,30 @@
     <script type="module" src="/js/dashboard.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-          <h2>Welcome, <span id="loggedUserfname"></span></h2>
-          <ul>
-            <li><a href="/templates/menu.html" title="Add or Edit Menu">Add or Edit Menu</a></li>
-            <li><button id="logoutButton" title="Logout">Logout</button></li>
-          </ul>
-        </nav>
+  <header>
+    <nav>
+      <h2>Welcome, <span id="loggedUserfname">User</span></h2>
+      <ul>
+        <li><a href="/templates/menu.html" title="Add or Edit Menu">Add/Edit Menu</a></li>
+        <li><button id="logoutButton" title="Logout">Logout</button></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="editor-container">
+      <header class="editor-header">
+          <button id="run-btn">Run</button>
       </header>
-    <div class="editor-container">
-        <header>
-            <button id="run-btn">Run</button>
-        </header>
-        <div class="editor">
-            <textarea id="html-code"></textarea>
-            <iframe id="output" sandbox="allow-scripts"></iframe>
-        </div>
-    </div>
-    <!-- Link to CodeMirror JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
-    <!-- Link to Custom JS -->
-    <script src="/js/script_html.js"></script>
+      <div class="editor">
+          <textarea id="html-code"></textarea>
+          <iframe id="output" sandbox="allow-scripts"></iframe>
+      </div>
+  </div>
+
+  <!-- Link to CodeMirror JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+  <!-- Link to Custom JS -->
+  <script src="/js/script_html.js"></script>
 </body>
 </html>

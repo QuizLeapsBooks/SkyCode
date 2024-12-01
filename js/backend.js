@@ -1,38 +1,68 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC8ef9-NADIy4tVnHkZs_KnixoOxi0D9Ew",
-  authDomain: "food-menu-login.firebaseapp.com",
-  projectId: "food-menu-login",
-  storageBucket: "food-menu-login.appspot.com",
-  messagingSenderId: "332861655682",
-  appId: "1:332861655682:web:7586788668a96caa2e829b"
+  apiKey: "AIzaSyBzfi1k8VTMwmWewkdmTF9hYCUTdzMa-lg",
+  authDomain: "login-form-sc.firebaseapp.com",
+  projectId: "login-form-sc",
+  storageBucket: "login-form-sc.firebasestorage.app",
+  messagingSenderId: "897799090943",
+  appId: "1:897799090943:web:74e87ccbe04fe6b62f52ca"
 };
 
 // Initialize Firebase and Firestore
 const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+const auth = getAuth(app);
 const db = getFirestore(app);
 
 // Helper function to show messages
 function showMessage(message, divId) {
   const messageDiv = document.getElementById(divId);
   messageDiv.style.display = "block";
-  messageDiv.innerHTML = message;
+  messageDiv.textContent = message;
   setTimeout(() => {
     messageDiv.style.display = "none";
   }, 5000);
 }
 
+// Toggle password visibility
+function togglePassword(inputId, iconId) {
+  const input = document.getElementById(inputId);
+  const icon = document.getElementById(iconId);
+  if (input.type === "password") {
+    input.type = "text";
+    icon.className = "fa fa-eye-slash";
+  } else {
+    input.type = "password";
+    icon.className = "fa fa-eye";
+  }
+}
+
+// Show Login form
+function showLoginForm() {
+  document.getElementById("signup-page").classList.add("hidden");
+  document.getElementById("login-page").classList.remove("hidden");
+}
+
+// Show Signup form
+function showSignUpForm() {
+  document.getElementById("login-page").classList.add("hidden");
+  document.getElementById("signup-page").classList.remove("hidden");
+}
+
 // Sign Up functionality
-document.getElementById('submitSignUp').addEventListener('click', async (event) => {
-  const fname = document.getElementById('signup-fname').value;
-  const lname = document.getElementById('signup-lname').value;
-  const email = document.getElementById('signup-email').value;
-  const password = document.getElementById('signup-password').value;
+document.getElementById("submitSignUp").addEventListener("click", async () => {
+  const fname = document.getElementById("signup-fname").value.trim();
+  const lname = document.getElementById("signup-lname").value.trim();
+  const email = document.getElementById("signup-email").value.trim();
+  const password = document.getElementById("signup-password").value;
+
+  if (!fname || !lname || !email || !password) {
+    showMessage("All fields are required", "signUpMessage");
+    return;
+  }
 
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -42,18 +72,20 @@ document.getElementById('submitSignUp').addEventListener('click', async (event) 
     showMessage("Account Created Successfully", "signUpMessage");
     setTimeout(() => { window.location.href = "/templates/dashboard.html"; }, 2000);
   } catch (error) {
-    if (error.code === 'auth/email-already-in-use') {
-      showMessage("Email Address Already Exists", "signUpMessage");
-    } else {
-      showMessage("Unable to create User", "signUpMessage");
-    }
+    const errorMessage = error.code === "auth/email-already-in-use" ? "Email Address Already Exists" : "Unable to create User";
+    showMessage(errorMessage, "signUpMessage");
   }
 });
 
 // Login functionality
-document.getElementById('submitSignIn').addEventListener('click', async (event) => {
-  const email = document.getElementById('signIn-email').value;
-  const password = document.getElementById('signIn-password').value;
+document.getElementById("submitSignIn").addEventListener("click", async () => {
+  const email = document.getElementById("signIn-email").value.trim();
+  const password = document.getElementById("signIn-password").value;
+
+  if (!email || !password) {
+    showMessage("All fields are required", "signInMessage");
+    return;
+  }
 
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);

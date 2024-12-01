@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>This Week Menu</title>
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <script type="module" src="/js/dashboard.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <h2>Welcome, <span id="loggedUserfname">User</span></h2>
+      <ul>
+        <li><a href="/templates/menu.html" title="Add or Edit Menu">Add or Edit Menu</a></li>
+        <li><button id="logoutButton" title="Logout">Logout</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="menu-container">
+      <a href="/templates/html_runner.html" class="menu-card">
+        <img src="/templates/math.jpg" alt="Food 1">
+        <div class="menu-info">
+          <h3>HTML</h3>
+          <p>Click here to run your HTML code</p>
+        </div>
+      </a>
+      <a href="/templates/html_css_runner.html" class="menu-card">
+        <img src="/templates/math.jpg" alt="Food 2">
+        <div class="menu-info">
+          <h3>HTML + CSS</h3>
+          <p>Click here to run your HTML and CSS code</p>
+        </div>
+      </a>
+      <!-- Repeat for more menu items as needed -->
+    </section>
+  </main>
+</body>
+</html>
