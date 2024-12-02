@@ -1,0 +1,87 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header Styling */
+header nav {
+    background-color: #6A0572;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h2 {
+    color: #fff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a, nav ul li button {
+    color: white;
+    background-color: #8B00C7;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav ul li button {
+    background-color: red;
+}
+
+/* Editor Container Styling */
+.editor-container {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.editor-header {
+    background: #0078d4;
+    padding: 10px;
+    text-align: right;
+}
+
+.editor-header button {
+    background: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #0078d4;
+}
+
+.CodeMirror {
+    height: 300px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+#output {
+    padding: 10px;
+    background-color: #e8e8e8;
+    margin-top: 10px;
+    font-family: monospace;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

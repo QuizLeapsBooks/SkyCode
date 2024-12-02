@@ -96,3 +96,4 @@ document.getElementById("submitSignIn").addEventListener("click", async () => {
     showMessage("Login Failed. Email or Password is incorrect.", "signInMessage");
   }
 });
+

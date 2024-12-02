@@ -24,3 +24,4 @@ function togglePassword(fieldId, eyeId) {
     document.getElementById("signup-page").classList.add("hidden");
   }
   
+  
