@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Compiler</title>
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.css">
+    <link rel="stylesheet" href="/css/CSS_java.css"> <!-- Link to custom CSS -->
+</head>
+<body>
+    <header>
+        <nav>
+            <h2>Welcome, <span id="loggedUserfname">User</span> <span> | Java |</span></h2>
+            <ul>
+                <li><a href="/templates/menu.html" title="Add or Edit Menu" aria-label="Add or Edit Menu">Add/Edit Menu</a></li>
+                <li><button id="logoutButton" title="Logout" aria-label="Logout">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="editor-container">
+            <textarea id="java-code" aria-label="Java Code Editor"></textarea>
+            <button id="compile-button" aria-label="Compile Java Code">Compile & Run</button>
+        </section>
+        <section class="output-container">
+            <h3>Output:</h3>
+            <div id="output" aria-live="polite" aria-atomic="true"></div>
+        </section>
+    </main>
+    <!-- CodeMirror Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/clike/clike.min.js"></script>
+    <!-- Custom Scripts -->
+    <script src="/js/script_java.js"></script>
+    <script type="module" src="/js/dashboard.js"></script>
+</body>
+</html>

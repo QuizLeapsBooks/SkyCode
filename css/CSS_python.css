@@ -1,8 +1,9 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
 /* Header Styling */
@@ -13,24 +14,21 @@ header nav {
     align-items: center;
     justify-content: space-between;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 header h2 {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin: 0;
+    font-weight: bold;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px;
     padding: 0;
-    margin: 0;
-}
-
-nav ul li {
     margin: 0;
 }
 
@@ -41,11 +39,12 @@ nav ul li a {
     border-radius: 5px;
     text-decoration: none;
     background-color: #8B00C7;
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 nav ul li a:hover {
     background-color: #550080;
+    transform: scale(1.05);
 }
 
 nav ul li button {
@@ -56,49 +55,47 @@ nav ul li button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 nav ul li button:hover {
     background-color: darkred;
+    transform: scale(1.05);
 }
 
 /* Editor Container Styling */
 .editor-container {
-    margin: 20px auto;
+    margin: 30px auto;
     width: 90%;
     max-width: 1200px;
     background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     overflow: hidden;
+    border: 1px solid #ddd;
 }
 
 .editor-header {
     background: #0078d4;
-    padding: 10px;
+    padding: 15px;
     text-align: right;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.editor-header h3 {
-    color: white;
-    font-size: 1.2rem;
-    margin: 0;
+    border-bottom: 1px solid #ccc;
 }
 
 .editor-header button {
     background: #fff;
-    border: none;
+    border: 1px solid #0078d4;
     padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
     color: #0078d4;
     cursor: pointer;
     font-weight: bold;
-    transition: 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .editor-header button:hover {
@@ -110,7 +107,7 @@ nav ul li button:hover {
 .editor {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 180px);
+    height: calc(100vh - 200px);
 }
 
 .CodeMirror {
@@ -120,17 +117,21 @@ nav ul li button:hover {
     outline: none;
     font-family: "Courier New", Courier, monospace;
     border-bottom: 1px solid #ccc;
+    padding: 15px;
 }
 
 iframe#output {
     flex: 1;
     border: none;
-    padding: 10px;
+    padding: 15px;
     background: #f4f4f4;
     border-top: 1px solid #ccc;
+    font-size: 14px;
+    font-family: 'Consolas', monospace;
+    color: #444;
 }
 
-/* Button Styling */
+/* Run Button Styling */
 button#run-btn {
     background-color: #4CAF50;
     color: white;
@@ -139,11 +140,13 @@ button#run-btn {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 button#run-btn:hover {
     background-color: #45a049;
+    transform: scale(1.05);
 }
 
 /* Responsive Design */
@@ -154,7 +157,7 @@ button#run-btn:hover {
     }
 
     header h2 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     nav ul li a, nav ul li button {
@@ -162,12 +165,12 @@ button#run-btn:hover {
         padding: 8px 15px;
     }
 
-    .editor-header h3 {
-        font-size: 1rem;
-    }
-
     button#run-btn {
         font-size: 0.9rem;
         padding: 8px 12px;
+    }
+
+    .editor {
+        height: auto;
     }
 }

@@ -29,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (userDoc.exists()) {
           const userData = userDoc.data();
           document.getElementById("loggedUserfname").innerText = userData.fname || "User";
+          document.getElementById("loggedUserlname").innerText = userData.fname || "User";
+          document.getElementById("loggedUseremail").innerText = userData.fname || "User";
+          document.getElementById("loggedUserpassword").innerText = userData.fname || "User";
         } else {
           console.log("No user data found.");
         }
