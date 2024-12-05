@@ -8,15 +8,22 @@
   <script type="module" src="/js/profile.js"></script>
 </head>
 <body>
-  <div class="profile-container">
-    <div class="profile-card">
+  <div class="container">
+    <div id="loading">Fetching user profile...</div>
+    <div class="profile">
       <div class="profile-avatar">
-        <img src="https://via.placeholder.com/150" alt="User Avatar" />
+        <img id="profile-img" src="https://via.placeholder.com/150" alt="User Avatar">
       </div>
-      <h1 id="profile-name">Fetching...</h1>
+      <h2 id="profile-name">Loading...</h2>
       <p id="profile-email">Loading...</p>
-      <button id="logout-button" class="btn">Logout</button>
+    </div>
+    <div class="profile-actions">
+      <button id="upload-btn" class="btn">Upload Profile Image</button>
+      <input type="file" id="upload-image" class="hidden" accept="image/*">
+      <button id="remove-btn" class="btn">Remove Profile Image</button>
     </div>
   </div>
+  <a href="/templates/dashboard.html">Home</a>
+  
 </body>
 </html>

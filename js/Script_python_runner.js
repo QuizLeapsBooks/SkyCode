@@ -1,25 +1,42 @@
-document.getElementById("run-btn").addEventListener("click", () => {
-    const code = editor.getValue();
+document.getElementById('run-btn').addEventListener('click', () => {
+    const code = window.codeEditor.getValue(); // Get code from CodeMirror editor
 
-    fetch("http://127.0.0.1:5000/run", {
-        method: "POST",
+    // Call the Flask backend with the Python code
+    fetch('http://127.0.0.1:5500/templates/python_runner.html', {
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify({ code }),
     })
-        .then((response) => response.json())
-        .then((data) => {
-            const iframe = document.getElementById("output");
-            iframe.contentDocument.body.innerText = data.output || data.error;
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Server error: ${response.status}`);
+            }
+            return response.json();
         })
-        .catch((error) => console.error("Error:", error));
-});
+        .then((data) => {
+            const outputFrame = document.getElementById('output'); // Target iframe
+            const outputDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
 
-document.addEventListener("keydown", function (event) {
-    // Check if the user presses Ctrl + Enter
-    if (event.ctrlKey && event.key === "Enter") {
-        event.preventDefault(); // Prevent default browser action if any
-        document.getElementById("run-btn").click(); // Trigger the Run button
-    }
+            // Write to the iframe (either output or error)
+            outputDoc.open();
+            if (data.output) {
+                outputDoc.write(`<pre>${data.output}</pre>`);
+            } else if (data.error) {
+                outputDoc.write(`<pre style="color: red;">${data.error}</pre>`);
+            } else {
+                outputDoc.write("<pre>No output produced.</pre>");
+            }
+            outputDoc.close();
+        })
+        .catch((error) => {
+            const outputFrame = document.getElementById('output'); // Target iframe
+            const outputDoc = outputFrame.contentDocument || outputFrame.contentWindow.document;
+
+            // Show fetch errors in the iframe
+            outputDoc.open();
+            outputDoc.write(`<pre style="color: red;">Error: ${error.message}</pre>`);
+            outputDoc.close();
+        });
 });

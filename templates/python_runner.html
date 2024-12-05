@@ -24,24 +24,27 @@
 
     <div class="editor-container">
         <header class="editor-header">
-            <button id="run-btn" onclick="runCode()">Run</button>
-
+            <button id="run-btn">Run</button>
         </header>
         <div class="editor">
             <textarea id="python-code"></textarea>
             <iframe id="output" sandbox="allow-scripts"></iframe>
         </div>
     </div>
+    <div id="output" style="border: 1px solid black; padding: 10px; height: 100px; overflow-y: auto;"></div>
 
     <!-- Link to Custom JS -->
-    <script src="/js/Script_python_runner.js"></script>
-    <script type="module" src="/js/dashboard.js"></script>
+    <script src="/js/script.js"></script>
     <script>
+        // Initialize CodeMirror Editor
         const editor = CodeMirror.fromTextArea(document.getElementById("python-code"), {
             mode: "python",
             lineNumbers: true,
             theme: "default",
         });
+
+        // Set global editor instance for easier access
+        window.codeEditor = editor;
     </script>
 </body>
 </html>
