@@ -7,17 +7,32 @@
     <!-- CodeMirror CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.css">
     <link rel="stylesheet" href="/css/CSS_script.css">
+    <link rel="stylesheet" href="/css/header.css">
+    
 </head>
 <body>
     <header>
         <nav>
-            <h2>Welcome, <span id="loggedUserfname">User</span> <span> | JavaScript |</span></h2>
-            <ul>
-                <li><a href="/templates/menu.html" title="Add or Edit Menu" aria-label="Add or Edit Menu">Add/Edit Menu</a></li>
-                <li><button id="logoutButton" title="Logout" aria-label="Logout">Logout</button></li>
+          <div class="navbar-container">
+            <h2>Welcome, <span id="loggedUserfname">User</span></h2>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+              ☰
+            </button>
+            <ul class="nav-links">
+              <li><a href="/templates/dashboard.html" title="Home">Home</a></li>
+              <li><a href="/templates/html-compresser.html" title="HTML Compressor">HTML</a></li>
+              <li><a href="/templates/css-compress.html" title="CSS Compressor">CSS</a></li>
+              <li><a href="/templates/javascript-compress.html" title="JavaScript Compressor">JavaScript</a></li>
+              <li><a href="/templates/python-compress.html" title="Python Compressor">Python</a></li>
+              <li><a href="/templates/java-compress.html" title="Java Compressor">Java</a></li>
+              <li><a href="/templates/c-compress.html" title="C Compressor">C</a></li>
+              <li><a href="/templates/c++-compress.html" title="C++ Compressor">C++</a></li>
+              <li><a href="/templates/php-compress.html" title="PHP Compressor">PHP</a></li>
+              <li><button id="logoutButton" title="Logout">Logout</button></li>
             </ul>
+          </div>
         </nav>
-    </header>
+      </header>
     <main>
         <section class="editor-container">
             <textarea id="js-code" aria-label="JavaScript Code Editor"></textarea>
@@ -32,7 +47,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/javascript/javascript.min.js"></script>
     <!-- Custom Scripts -->
-    <script src="/js/script_javascript.js"></script>
-    <script type="module" src="/js/dashboard.js"></script>
+    <script src="/JavaScript/script_javascript.js"></script>
+    <script type="module" src="/JavaScript/dashboard.js"></script>
 </body>
 </html>

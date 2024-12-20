@@ -3,56 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>This Week Menu</title>
-  <link rel="stylesheet" href="/css/dashboard.css">
-  <script type="module" src="/js/dashboard.js" defer></script>
+  <meta name="description" content="S-Code Dashboard offers tools to compress and run HTML, CSS, JavaScript, Python, and other code efficiently. Simplify your development workflow with S-Code.">
+  <meta name="keywords" content="Code Compressor, Code Runner, HTML Compressor, CSS Compressor, JavaScript Compressor, Python Compressor, Java, PHP, C++, C, Development Tools">
+  <meta name="author" content="Your Website Name">
+  <meta property="og:title" content="S-Code Dashboard - Compress and Run Your Code Effortlessly">
+  <meta property="og:description" content="Use S-Code Dashboard to compress and run your HTML, CSS, JavaScript, and more. Enhance your coding productivity with efficient tools.">
+  <meta property="og:image" content="/templates/2f708401-a76c-4516-958f-3e1c750a4237.webp">
+  <meta property="og:url" content="https://your-website-url.com/dashboard.html">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://your-website-url.com/dashboard.html">
+  <title>S-Code Dashboard - Compress and Run Your Code</title>
+  <link rel="stylesheet" href="/css/basic.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/middle_body.css">
+  <script type="module" src="/JavaScript/dashboard.js" defer></script>
+  <script src="/JavaScript/search-bar.js" defer></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/templates/2f708401-a76c-4516-958f-3e1c750a4237.webp" media="(prefers-color-scheme: light)"/>
 </head>
 <body>
   <header>
     <nav>
-      <h2>Welcome, <span id="loggedUserfname">User</span></h2>
-      <img id="profilePicture" src="" alt="Profile Picture" class="profile-img" />
-      <ul>
-        <li><a href="/templates/profile.html" title="Profile">Profile</a></li>
-        <li><button id="logoutButton" title="Logout">Logout</button></li>
-      </ul>
+      <div class="navbar-container">
+        <h2>Welcome, <span id="loggedUserfname">User</span></h2>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+        <ul class="nav-links">
+          <p>Compressors-</p>
+          <li><a href="/templates/html-compresser.html" title="HTML Compressor">HTML</a></li>
+          <li><a href="/templates/css-compress.html" title="CSS Compressor">CSS</a></li>
+          <li><a href="/templates/javascript-compress.html" title="JavaScript Compressor">JavaScript</a></li>
+          <li><a href="/templates/python-compress.html" title="Python Compressor">Python</a></li>
+          <li><a href="/templates/java-compress.html" title="Java Compressor">Java</a></li>
+          <li><a href="/templates/c-compress.html" title="C Compressor">C</a></li>
+          <li><a href="/templates/c++-compress.html" title="C++ Compressor">C++</a></li>
+          <li><a href="/templates/php-compress.html" title="PHP Compressor">PHP</a></li>
+          <li><button id="logoutButton" title="Logout">Logout</button></li>
+        </ul>
+      </div>
     </nav>
   </header>
-  
-  
 
   <main>
+    <h1 style="text-align: center; font-size: 2.5rem; margin-top: 30px; 
+               color: #333; animation: fadeIn 1.5s ease-out;">
+      Explore Your Development Tools
+    </h1>
+      <!-- Search Bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search for tools or features..." />
+    <button>Search</button>
+  </div>
     <section class="menu-container">
-      <a href="/templates/html_runner.html" class="menu-card">
-        <img src="/templates/math.jpg" alt="HTML">
+      <a href="/templates/html-runner.html" class="menu-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6zQcLR6qdcYUyJRS5RuP9Vsn8n6dSPnkTRA&s" alt="HTML">
         <div class="menu-info">
           <h3>HTML</h3>
           <p>Click here to run your HTML code</p>
         </div>
       </a>
       <a href="/templates/html_css_runner.html" class="menu-card">
-        <img src="/templates/math.jpg" alt="HTML+CSS">
+        <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2018/11/css-running.png?fit=1200%2C600&ssl=1" alt="HTML+CSS">
         <div class="menu-info">
           <h3>HTML + CSS</h3>
           <p>Click here to run your HTML and CSS code</p>
         </div>
       </a>
-      <a href="/templates/python_runner.html" class="menu-card">
-        <img src="/templates/math.jpg" alt="Python">
+      <a href="/templates/script_runner.html" class="menu-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHMeddEmAIiJqE5ZwyyQe59dqsPam_Eq-0cw&s" alt="JavaScript">
         <div class="menu-info">
-          <h3>Python</h3>
-          <p>Click here to run your Python code</p>
+          <h3>JavaScript</h3>
+          <p>Click here to run your JavaScript code</p>
         </div>
       </a>
-      <a href="/templates/C++_runner.html" class="menu-card">
-        <img src="/templates/math.jpg" alt="C++">
+    </section> <br><br><hr>
+    <h1 style="text-align: center; font-size: 2.5rem; margin-top: 30px; 
+               color: #333; animation: fadeIn 1.5s ease-out;">
+      Code Compressor
+    </h1>
+    <section class="menu-container">
+      <a href="/templates/html-compresser.html" class="menu-card">
+        <img src="https://cdn.prod.website-files.com/60ef088dd8fef99352abb434/6486d18b1a6ff4562288d68d_17.webp" alt="HTML">
+        <div class="menu-info">
+          <h3>HTML</h3>
+          <p>Compress your HTML</p>
+        </div>
+      </a>
+      <a href="/templates/css-compress.html" class="menu-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqsEZ9F2KztrvdoFMla81NPywYvCdYYpvdrA&s" alt="HTML+CSS">
+        <div class="menu-info">
+          <h3>CSS</h3>
+          <p>Compress your CSS</p>
+        </div>
+      </a>
+      <a href="/templates/javascript-compress.html" class="menu-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfR8k15075Qcr3tLvUyAc8roy4m8AAdyb9uQ&s" alt="JavaScript">
+        <div class="menu-info">
+          <h3>JavaScript</h3>
+          <p>Compress your JavaScript</p>
+        </div>
+      </a>
+      <a href="/templates/c-compress.html" class="menu-card">
+        <img src="https://media.istockphoto.com/id/615714450/vector/laptop-with-c-letter-learn-c-programming-language-flat-design.jpg?s=612x612&w=0&k=20&c=NS544KudDbwCLmP7-EUGzd7Oz-TBwcobhH34lCH56kk=" alt="JavaScript">
+        <div class="menu-info">
+          <h3>C</h3>
+          <p>Compress your C code</p>
+        </div>
+      </a>
+      <a href="/templates/c++-compress.html" class="menu-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0njzFbCZqDjdu--A_ZyJmcM8N_rvpMHuzrg&s" alt="JavaScript">
         <div class="menu-info">
           <h3>C++</h3>
-          <p>Click here to run your C++ code</p>
+          <p>Compress your C++ code</p>
         </div>
       </a>
-      <!-- Repeat for more menu items as needed -->
+      <a href="/templates/python-compress.html" class="menu-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgrFcQfdxnpIqz6Qb8TaayHtL9IZusU345jg&s" alt="JavaScript">
+        <div class="menu-info">
+          <h3>Python</h3>
+          <p>Compress your Python code</p>
+        </div>
+      </a>
+      <a href="/templates/java-compress.html" class="menu-card">
+        <img src="/templates/hqdefault.jpg" alt="Java">
+        <div class="menu-info">
+          <h3>Java</h3>
+          <p>Compress your Java code</p>
+        </div>
+      </a>
+      <a href="/templates/php-compress.html" class="menu-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvyy15TIWfqdVgyg-OxbipmI2A23kQgrKT1Q&s" alt="JavaScript">
+        <div class="menu-info">
+          <h3>PHP</h3>
+          <p>Compress your PHP code</p>
+        </div>
+      </a>
     </section>
   </main>
+  <div class="button-container">
+    <button id="myButton1">
+        Profile
+    </button>
+      <!-- Floating Background -->
+      <div class="floating-bg"></div>
 </body>
+<script>
+document.getElementById('myButton1').addEventListener('click', function() {
+  window.location.href = '/templates/profile.html';
+});
+</script>
 </html>

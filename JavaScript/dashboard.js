@@ -64,7 +64,16 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "/templates/index.html"; // Redirect to login page on logout
       })
       .catch((error) => {
-        console.error("Error during logout:", error);
+        console.log("Error during logout:", error);
       });
   });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+  
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  });
+  

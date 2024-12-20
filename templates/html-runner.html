@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Editor with Syntax Highlighting</title>
+    <!-- Link to CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <!-- Link to Custom CSS -->
+    <link rel="stylesheet" href="/css/styles_html.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <script type="module" src="/JavaScript/dashboard.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="navbar-container">
+            <h2>Welcome, <span id="loggedUserfname">User</span></h2>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+              ☰
+            </button>
+            <ul class="nav-links">
+              <li><a href="/templates/dashboard.html" title="Home">Home</a></li>
+              <li><a href="/templates/html-compresser.html" title="HTML Compressor">HTML</a></li>
+              <li><a href="/templates/css-compress.html" title="CSS Compressor">CSS</a></li>
+              <li><a href="/templates/javascript-compress.html" title="JavaScript Compressor">JavaScript</a></li>
+              <li><a href="/templates/python-compress.html" title="Python Compressor">Python</a></li>
+              <li><a href="/templates/java-compress.html" title="Java Compressor">Java</a></li>
+              <li><a href="/templates/c-compress.html" title="C Compressor">C</a></li>
+              <li><a href="/templates/c++-compress.html" title="C++ Compressor">C++</a></li>
+              <li><a href="/templates/php-compress.html" title="PHP Compressor">PHP</a></li>
+              <li><button id="logoutButton" title="Logout">Logout</button></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <h1>Run Your HTML</h1>
+  
+  <div class="editor-container">
+      <header class="editor-header">
+          <button id="run-btn">Run</button>
+      </header>
+      <div class="editor">
+          <textarea id="html-code"></textarea>
+          <iframe id="output" sandbox="allow-scripts"></iframe>
+      </div>
+  </div>
+
+  <!-- Link to CodeMirror JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
+  <!-- Link to Custom JS -->
+  <script>// Initialize CodeMirror
+    const editor = CodeMirror.fromTextArea(document.getElementById("html-code"), {
+        mode: "htmlmixed", // Syntax highlighting mode
+        theme: "default", // Theme for CodeMirror
+        lineNumbers: true, // Show line numbers
+        matchBrackets: true, // Highlight matching brackets
+        autoCloseTags: true, // Automatically close HTML tags
+    });
+    
+    // Selecting elements
+    const runButton = document.getElementById("run-btn");
+    const output = document.getElementById("output");
+    
+    // Add event listener to the "Run" button
+    runButton.addEventListener("click", () => {
+        const code = editor.getValue(); // Get the HTML code from CodeMirror
+        output.srcdoc = code; // Set it as the iframe's content
+    });
+    
+    
+    </script>
+</body>
+</html>

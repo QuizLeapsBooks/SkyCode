@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Compressor | S-Code</title>
+  <script type="module" src="/JavaScript/dashboard.js"></script>
+  <link rel="stylesheet" href="/css/header-compressor.css">
+  <style>
+    /* General Body Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #8e44ad, #3498db);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    /* Container Styling */
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+
+    /* Headings Styling */
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #f1c40f;
+    }
+
+    h3 {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #ecf0f1;
+    }
+
+    /* Textarea Styling */
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-bottom: 20px;
+      padding: 15px;
+      border: none;
+      border-radius: 15px;
+      font-size: 16px;
+      font-family: 'Courier New', Courier, monospace;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      resize: none;
+      outline: none;
+    }
+
+    textarea#outputCode {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ecf0f1;
+      border: 1px solid #ffffff33;
+    }
+
+    /* Button Styling */
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #f39c12, #d35400);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #d35400, #f39c12);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      button {
+        font-size: 16px;
+        padding: 12px;
+      }
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="navbar-container">
+        <h2>Welcome, <span id="loggedUserfname">User</span></h2>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+        <ul class="nav-links">
+          <li><a href="/templates/dashboard.html" title="Home">Home</a></li>
+          <li><a href="/templates/html-compresser.html" title="HTML Compressor">HTML</a></li>
+          <li><a href="/templates/css-compress.html" title="CSS Compressor">CSS</a></li>
+          <li><a href="/templates/javascript-compress.html" title="JavaScript Compressor">JavaScript</a></li>
+          <li><a href="/templates/python-compress.html" title="Python Compressor">Python</a></li>
+          <li><a href="/templates/java-compress.html" title="Java Compressor">Java</a></li>
+          <li><a href="/templates/c-compress.html" title="C Compressor">C</a></li>
+          <li><a href="/templates/c++-compress.html" title="C++ Compressor">C++</a></li>
+          <li><a href="/templates/php-compress.html" title="PHP Compressor">PHP</a></li>
+          <li><button id="logoutButton" title="Logout">Logout</button></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>HTML Compressor</h1>
+    <textarea id="inputCode" placeholder="Paste your HTML code here..."></textarea>
+    <button id="compressButton">Compress Code</button>
+    <h3>Compressed HTML:</h3>
+    <textarea id="outputCode" readonly placeholder="Compressed code will appear here..."></textarea>
+    <button id="copyButton">Copy to Clipboard</button>
+  </div>
+
+  <script>
+    document.getElementById('compressButton').addEventListener('click', () => {
+      const inputCode = document.getElementById('inputCode').value;
+
+      // Compress HTML
+      const compressedCode = inputCode
+        .replace(/<!--[\s\S]*?-->/g, '')   // Remove comments
+        .replace(/\s{2,}/g, ' ')          // Remove extra spaces
+        .replace(/>\s+</g, '><')          // Remove spaces between tags
+        .trim();                          // Trim leading and trailing spaces
+
+      // Display compressed HTML
+      document.getElementById('outputCode').value = compressedCode;
+    });
+  </script>
+  <script>
+    document.getElementById('copyButton').addEventListener('click', () => {
+  const outputCode = document.getElementById('outputCode');
+  
+  // Select the text in the textarea
+  outputCode.select();
+  outputCode.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the text
+  navigator.clipboard.writeText(outputCode.value)
+    .then(() => alert('Copied to clipboard!'))
+    .catch(err => alert('Failed to copy: ' + err));
+});
+
+  </script>
+</body>
+</html>

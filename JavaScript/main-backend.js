@@ -18,38 +18,20 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 // Helper function to show messages
-function showMessage(message, divId) {
+function showMessage(message, divId, isError = true) {
   const messageDiv = document.getElementById(divId);
   messageDiv.style.display = "block";
   messageDiv.textContent = message;
+  messageDiv.style.color = isError ? "red" : "green";
   setTimeout(() => {
     messageDiv.style.display = "none";
   }, 5000);
 }
 
-// Toggle password visibility
-function togglePassword(inputId, iconId) {
-  const input = document.getElementById(inputId);
-  const icon = document.getElementById(iconId);
-  if (input.type === "password") {
-    input.type = "text";
-    icon.className = "fa fa-eye-slash";
-  } else {
-    input.type = "password";
-    icon.className = "fa fa-eye";
-  }
-}
-
-// Show Login form
-function showLoginForm() {
-  document.getElementById("signup-page").classList.add("hidden");
-  document.getElementById("login-page").classList.remove("hidden");
-}
-
-// Show Signup form
-function showSignUpForm() {
-  document.getElementById("login-page").classList.add("hidden");
-  document.getElementById("signup-page").classList.remove("hidden");
+// Utility for email validation
+function isValidEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
 }
 
 // Sign Up functionality
@@ -64,15 +46,28 @@ document.getElementById("submitSignUp").addEventListener("click", async () => {
     return;
   }
 
+  if (!isValidEmail(email)) {
+    showMessage("Invalid email format", "signUpMessage");
+    return;
+  }
+
+  if (password.length < 8) {
+    showMessage("Password must be at least 8 characters long", "signUpMessage");
+    return;
+  }
+
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
     await setDoc(doc(db, "users", user.uid), { fname, lname, email });
     localStorage.setItem("loggedInUserId", user.uid);
-    showMessage("Account Created Successfully", "signUpMessage");
-    setTimeout(() => { window.location.href = "/templates/dashboard.html"; }, 2000);
+    showMessage("Account Created Successfully", "signUpMessage", false);
+    setTimeout(() => location.replace("/templates/dashboard.html"), 2000);
   } catch (error) {
-    const errorMessage = error.code === "auth/email-already-in-use" ? "Email Address Already Exists" : "Unable to create User";
+    console.error(error);
+    const errorMessage = error.code === "auth/email-already-in-use"
+      ? "Email Address Already Exists"
+      : "Unable to create User. Please try again.";
     showMessage(errorMessage, "signUpMessage");
   }
 });
@@ -87,13 +82,18 @@ document.getElementById("submitSignIn").addEventListener("click", async () => {
     return;
   }
 
+  if (!isValidEmail(email)) {
+    showMessage("Invalid email format", "signInMessage");
+    return;
+  }
+
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     localStorage.setItem("loggedInUserId", userCredential.user.uid);
-    showMessage("Logged in Successfully", "signInMessage");
-    setTimeout(() => { window.location.href = "/templates/dashboard.html"; }, 2000);
+    showMessage("Logged in Successfully", "signInMessage", false);
+    setTimeout(() => location.replace("/templates/dashboard.html"), 2000);
   } catch (error) {
+    console.error(error);
     showMessage("Login Failed. Email or Password is incorrect.", "signInMessage");
   }
 });
-

@@ -1,0 +1,446 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #444;
+}
+
+header .logo img {
+    width: 80px;
+    animation: slideInLeft 1.5s ease-out;
+}
+
+.animate-logo{
+    border-radius: 100%;
+    border: 10px solid red;
+}
+
+
+header .auth-buttons button {
+    margin-left: 15px;
+    padding: 10px 20px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+header .auth-buttons button:hover {
+    background-color: #0ff;
+    color: #000;
+    box-shadow: 0 0 20px #0ff;
+}
+
+/* Main Content */
+main {
+    text-align: center;
+    margin: 5% auto;
+    max-width: 1000px;
+}
+
+.neon-text {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 20px #0ff, 0 0 30px #00f;
+    animation: glowText 2s infinite alternate;
+}
+
+.neon-text span {
+    color: #f00;
+    text-shadow: 0 0 20px #f00, 0 0 40px #ff4500;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #aaa;
+    animation: slideInUp 1.5s ease-out;
+}
+
+.cta-text {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #ff0;
+    text-shadow: 0 0 15px #ff0;
+}
+
+/* Feature Cards */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    cursor: not-allowed;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #0ff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 10px #0ff;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    animation: fadeInUp 2s ease-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25vw #0ff;
+}
+
+/* Floating Background Dots */
+.floating-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgb(1, 255, 22) 2px, transparent 2px);
+    background-size: 50px 50px;
+    opacity: .7;
+    animation: moveBg 15s linear infinite alternate;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: #777;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowText {
+    from {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #00f;
+    }
+    to {
+        text-shadow: 0 0 20px #0ff, 0 0 40px #00f;
+    }
+}
+
+@keyframes moveBg {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-bottom: 2px solid #444;
+}
+
+header .logo img {
+    width: 80px;
+    animation: slideInLeft 1.5s ease-out;
+}
+
+header .auth-buttons button {
+    margin-left: 15px;
+    padding: 10px 20px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+header .auth-buttons button:hover {
+    background-color: #0ff;
+    color: #000;
+    box-shadow: 0 0 20px #0ff;
+}
+
+/* Main Content */
+main {
+    text-align: center;
+    margin: 5% auto;
+    max-width: 1000px;
+}
+
+.neon-text {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 20px #0ff, 0 0 30px #00f;
+    display: inline-block;
+    white-space: nowrap;
+    animation: color-chnage 10s ease-in-out 10s 10 ;
+}
+@keyframes color-chnage {
+    0%{
+        color: wheat;
+    }
+    25%{
+        color: rgb(255, 0, 0);
+    }
+    50%{
+        color: rgb(242, 1, 247);
+    }
+    75%{
+        color: rgb(0, 26, 255);
+    }
+    100%{
+        color: rgb(39, 248, 7);
+    }
+}
+.neon-text:hover{
+    text-shadow:  0 0 40px #0ff, 0 0 50px #00f;
+}
+
+.cursor {
+    display: inline-block;
+    background-color: #fff;
+    width: 3px;
+    height: 50px;
+    margin-left: 5px;
+    animation: blink 1s infinite;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #aaa;
+    animation: slideInUp 1.5s ease-out;
+}
+
+/* Blinking Animation */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+/* Body Background with Animated Gradient */
+body {
+    background: linear-gradient(45deg, #000, #0ff, #f00, #00f);
+    background-size: 400% 400%;
+    color: #fff;
+    overflow-x: hidden;
+    animation: gradientBackground 10s infinite ease-in-out;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Header Buttons with Ripple Hover */
+header .auth-buttons button {
+    margin-left: 15px;
+    padding: 10px 20px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+header .auth-buttons button::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 50%;
+    left: 50%;
+    background: rgba(0, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+
+header .auth-buttons button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Features Section with Neon Borders */
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 20px #0ff, 0 0 40px #f00, 0 0 60px #00f;
+    transition: all 0.5s ease-in-out;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px #0ff, 0 0 60px #f00, 0 0 80px #00f;
+    border: 2px solid #0ff;
+}
+
+/* Neon Text Effects */
+.neon-text {
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 0 30px #0ff, 0 0 60px #f00, 0 0 90px #00f;
+    animation: textGlow 3s infinite alternate;
+}
+
+.neon-text:hover {
+    text-shadow: 0 0 50px #0ff, 0 0 80px #f00, 0 0 120px #00f;
+}
+
+/* Floating Neon Particles */
+.floating-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: floatParticles 15s infinite alternate;
+    opacity: 0.6;
+}
+
+/* Animations */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 20px #0ff, 0 0 40px #f00, 0 0 60px #00f;
+    }
+    to {
+        text-shadow: 0 0 40px #0ff, 0 0 80px #f00, 0 0 120px #00f;
+    }
+}
+
+@keyframes floatParticles {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+

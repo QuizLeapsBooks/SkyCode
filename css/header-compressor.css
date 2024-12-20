@@ -1,0 +1,109 @@
+/* Header Styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px; /* Reduced height */
+    background: linear-gradient(135deg, #6A82FB, #FC5C7D);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .navbar-container h2 {
+    color: #ffffff;
+    font-size: 1rem; /* Compact size */
+    margin: 0;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+  }
+  
+  .nav-links li {
+    margin: 0;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    padding: 5px 10px; /* Reduced padding */
+    border-radius: 3px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background: #ffffff33;
+    transform: translateY(-2px);
+  }
+  
+  .nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #logoutButton {
+    background: linear-gradient(135deg, #fc4a1a, #f7b733);
+    color: #ffffff;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  #logoutButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      position: absolute;
+      top: 60px;
+      right: 15px;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .nav-toggle {
+      display: block;
+    }
+  }
+  

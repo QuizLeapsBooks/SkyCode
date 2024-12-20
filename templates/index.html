@@ -1,67 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login and Signup</title>
-  <link rel="stylesheet" href="/css/indexpage.css">
-  <script type="module" src="/js/backend.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
-    .hidden { display: none; }
-    .eye { cursor: pointer; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); }
-  </style>
-</head>
-<body>
-  <!-- Sign Up Form -->
-  <div id="signup-page" class="container">
-    <h2>Sign Up</h2>
-    <form action="javascript:void(0)">
-      <div id="signUpMessage" class="messageDiv" style="display: none;"></div>
-      <div class="input-box">
-        <input type="text" id="signup-fname" required>
-        <label>First Name</label>
-      </div>
-      <div class="input-box">
-        <input type="text" id="signup-lname" required>
-        <label>Last Name</label>
-      </div>
-      <div class="input-box">
-        <input type="email" id="signup-email" required>
-        <label>Email</label>
-      </div>
-      <div class="input-box" style="position: relative;">
-        <input type="password" id="signup-password" required>
-        <label>Password</label>
-        <span class="eye" onclick="togglePassword('signup-password', 'eye-icon1')">
-          <i id="eye-icon1" class="fa fa-eye"></i>
-        </span>
-      </div>
-      <p>Already have an Account? <a href="#" onclick="showLoginForm()">Sign In</a></p>
-      <button id="submitSignUp">Sign Up</button>
-    </form>
-  </div>
 
-  <!-- Login Form (Hidden initially) -->
-  <div id="login-page" class="container hidden">
-    <h2>Sign In</h2>
-    <form action="javascript:void(0)">
-      <div id="signInMessage" class="messageDiv" style="display: none;"></div>
-      <div class="input-box">
-        <input type="email" id="signIn-email" required>
-        <label>Email</label>
-      </div>
-      <div class="input-box" style="position: relative;">
-        <input type="password" id="signIn-password" required>
-        <label>Password</label>
-        <span class="eye" onclick="togglePassword('signIn-password', 'eye-icon2')">
-          <i id="eye-icon2" class="fa fa-eye"></i>
-        </span>
-      </div>
-      <p>Create an Account? <a href="#" onclick="showSignUpForm()">Sign Up</a></p>
-      <button id="submitSignIn">Sign In</button>
-    </form>
-  </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="S-Code is a platform to code, run, and compress HTML, CSS, JavaScript, and more. Unlock the full experience by signing in!">
+    <meta name="keywords" content="S-Code, Code Editor, HTML Editor, CSS Runner, JavaScript Runner, Code Compressor">
+    <meta name="author" content="S-Code Team">
+    <title>S-Code | Welcome</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="image.png" alt="S-Code Logo" class="animate-logo">
+        </div>
+        <div class="auth-buttons">
+            <button id="signup" class="neon-button">Sign Up</button>
+            <button id="signin" class="neon-button">Sign In</button>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <div class="intro">
+            <h1 id="dynamic-text" class="neon-text"></h1>
+            <span class="cursor"></span>
+            <p class="tagline">Code, Run & Compress <br> HTML, CSS, JavaScript, and much more.</p>
+            <p class="cta-text">Sign in to unlock all features!</p>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features">
+            <div title="Not-Allowed | Please Sign In/Up" class="feature-card">
+                <h2>HTML Editor</h2>
+                <p>Run and test HTML code instantly.</p>
+            </div>
+            <div title="Not-Allowed | Please Sign In/Up" class="feature-card">
+                <h2>CSS & JS Runner</h2>
+                <p>Test and visualize designs interactively.</p>
+            </div>
+            <div title="Not-Allowed | Please Sign In/Up" class="feature-card">
+                <h2>Code Compressor</h2>
+                <p>Minimize code to boost performance.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Background -->
+    <div class="floating-bg"></div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 S-Code | All Rights Reserved</p>
+    </footer>
 </body>
-<script src="/js/main.js"></script>
+<script>
+    // Dynamic Typing Effect
+    const text = "Welcome to S-Code";
+    let index = 0;
+    const speed = 200; // Typing speed in ms
+    const targetElement = document.getElementById("dynamic-text");
+
+    function typeText() {
+        if (index < text.length) {
+            targetElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeText, speed);
+        }
+    }
+
+    // Start typing when the page loads
+    document.addEventListener("DOMContentLoaded", typeText);
+    document.getElementById('signup').addEventListener('click', function () {
+        window.location.href = '/templates/sign-up.html';
+    });
+    document.getElementById('signin').addEventListener('click', function () {
+        window.location.href = '/templates/sign-in.html';
+    });
+</script>
+
 </html>

@@ -3,21 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online HTML & CSS Editor</title>
+    <title>Online HTML & CSS Editor | S-Code</title>
     <link rel="stylesheet" href="/css/CSS_html_css.css">
-    <script type="module" src="/js/dashboard.js"></script>
+    <script type="module" src="/JavaScript/dashboard.js"></script>
+    <script src="/JavaScript/script_html-css.js"></script>
+    <link rel="stylesheet" href="/css/header.css">
+
 </head>
 <body>
-    <header>
-        <nav>
-          <h2>Welcome, <span id="loggedUserfname">User</span> <span> | HTML + CSS |</span></h2>
-          <ul>
-            <li><a href="/templates/dashboard.html" title="Home">Home</a></li>
-            <li><button id="logoutButton" title="Logout">Logout</button></li>
-          </ul>
-        </nav>
-      </header>
-    <main>
+  <header>
+    <nav>
+      <div class="navbar-container">
+        <h2>Welcome, <span id="loggedUserfname">User</span></h2>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+        <ul class="nav-links">
+          <li><a href="/templates/dashboard.html" title="Home">Home</a></li>
+          <li><a href="/templates/html-compresser.html" title="HTML Compressor">HTML</a></li>
+          <li><a href="/templates/css-compress.html" title="CSS Compressor">CSS</a></li>
+          <li><a href="/templates/javascript-compress.html" title="JavaScript Compressor">JavaScript</a></li>
+          <li><a href="/templates/python-compress.html" title="Python Compressor">Python</a></li>
+          <li><a href="/templates/java-compress.html" title="Java Compressor">Java</a></li>
+          <li><a href="/templates/c-compress.html" title="C Compressor">C</a></li>
+          <li><a href="/templates/c++-compress.html" title="C++ Compressor">C++</a></li>
+          <li><a href="/templates/php-compress.html" title="PHP Compressor">PHP</a></li>
+          <li><button id="logoutButton" title="Logout">Logout</button></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
         <!-- <div class="tabs">
             <button class="tab-btn active" data-tab="html">HTML</button>
             <button class="tab-btn" data-tab="css">CSS</button>
@@ -29,6 +44,5 @@
         <button id="run-btn">Run</button>
         <iframe id="output" sandbox="allow-scripts"></iframe>
     </main>
-    <script src="/js/script_html-css.js"></script>
 </body>
 </html>
