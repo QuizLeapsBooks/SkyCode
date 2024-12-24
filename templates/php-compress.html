@@ -3,9 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PHP Code Compressor</title>
+  <title>PHP Code Compressor | S-Code</title>
+  <meta name="description" content="Compress and optimize your PHP code effortlessly with S-Code's PHP Code Compressor.">
+  <meta name="keywords" content="PHP Code Compressor, Code Optimization, PHP Programming, Code Minifier, S-Code">
+  <meta name="author" content="S-Code Team">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="PHP Code Compressor - S-Code">
+  <meta property="og:description" content="Compress and optimize your PHP code effortlessly with S-Code's PHP Code Compressor.">
+  <meta property="og:url" content="https://quizleapsbooks.github.io/templates/php-compress.html">
+  <meta property="og:image" content="/templates/image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PHP Code Compressor - S-Code">
+  <meta name="twitter:description" content="Compress and optimize your PHP code effortlessly with S-Code's PHP Code Compressor.">
+  <meta name="twitter:image" content="/templates/image.png">
+  <link rel="icon" href="/templates/image.png" type="image/png">
   <script type="module" src="/JavaScript/dashboard.js"></script>
   <link rel="stylesheet" href="/css/header-compressor.css">
+  <script src="/JavaScript/blocker.js"></script>
   <style>
     /* Global Styling */
     body {
@@ -158,21 +173,19 @@
       // Display Compressed Code
       document.getElementById('outputCode').value = compressedCode;
     });
-  </script>
-  <script>
+
     document.getElementById('copyButton').addEventListener('click', () => {
-  const outputCode = document.getElementById('outputCode');
-  
-  // Select the text in the textarea
-  outputCode.select();
-  outputCode.setSelectionRange(0, 99999); // For mobile devices
-
-  // Copy the text
-  navigator.clipboard.writeText(outputCode.value)
-    .then(() => alert('Copied to clipboard!'))
-    .catch(err => alert('Failed to copy: ' + err));
-});
-
+      const outputCode = document.getElementById('outputCode');
+      
+      // Select the text in the textarea
+      outputCode.select();
+      outputCode.setSelectionRange(0, 99999); // For mobile devices
+    
+      // Copy the text
+      navigator.clipboard.writeText(outputCode.value)
+        .then(() => alert('Copied to clipboard!'))
+        .catch(err => alert('Failed to copy: ' + err));
+    });
   </script>
 </body>
 </html>

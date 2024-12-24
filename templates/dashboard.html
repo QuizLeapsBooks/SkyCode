@@ -5,20 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="S-Code Dashboard offers tools to compress and run HTML, CSS, JavaScript, Python, and other code efficiently. Simplify your development workflow with S-Code.">
   <meta name="keywords" content="Code Compressor, Code Runner, HTML Compressor, CSS Compressor, JavaScript Compressor, Python Compressor, Java, PHP, C++, C, Development Tools">
-  <meta name="author" content="Your Website Name">
+  <meta name="author" content="SkyCode">
   <meta property="og:title" content="S-Code Dashboard - Compress and Run Your Code Effortlessly">
   <meta property="og:description" content="Use S-Code Dashboard to compress and run your HTML, CSS, JavaScript, and more. Enhance your coding productivity with efficient tools.">
-  <meta property="og:image" content="/templates/2f708401-a76c-4516-958f-3e1c750a4237.webp">
-  <meta property="og:url" content="https://your-website-url.com/dashboard.html">
+  <meta property="og:image" content="/templates/image.png">
+  <meta property="og:url" content="https://quizleapsbooks.github.io/SkyCode/dashboard.html">
   <meta property="og:type" content="website">
-  <link rel="canonical" href="https://your-website-url.com/dashboard.html">
+  <link rel="canonical" href="https://quizleapsbooks.github.io/SkyCode/dashboard.html">
   <title>S-Code Dashboard - Compress and Run Your Code</title>
   <link rel="stylesheet" href="/css/basic.css">
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/middle_body.css">
-  <script type="module" src="/JavaScript/dashboard.js" defer></script>
-  <script src="/JavaScript/search-bar.js" defer></script>
-  <link rel="icon" type="image/png" sizes="32x32" href="/templates/2f708401-a76c-4516-958f-3e1c750a4237.webp" media="(prefers-color-scheme: light)"/>
+  <link rel="stylesheet" href="/css/blocker.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/templates/image.png" media="(prefers-color-scheme: light)"/>
 </head>
 <body>
   <header>
@@ -47,7 +46,7 @@
   <main>
     <h1 style="text-align: center; font-size: 2.5rem; margin-top: 30px; 
                color: #333; animation: fadeIn 1.5s ease-out;">
-      Explore Your Development Tools
+      Explore Your Development tools
     </h1>
       <!-- Search Bar -->
   <div class="search-bar">
@@ -139,6 +138,22 @@
         </div>
       </a>
     </section>
+    <div id="shortcutModal">
+      <h2>Shortcut Keys</h2>
+      <ul>
+          <li>Ctrl + 1: HTML Compressor</li>
+          <li>Ctrl + 2: CSS Compressor</li>
+          <li>Ctrl + 3: JavaScript Compressor</li>
+          <li>Ctrl + 4: Python Compressor</li>
+          <li>Ctrl + 5: Java Compressor</li>
+          <li>Ctrl + 6: C Compressor</li>
+          <li>Ctrl + 7: C++ Compressor</li>
+          <li>Ctrl + 8: PHP Compressor</li>
+          <li>Ctrl + H: Show Shortcut Keys</li>
+      </ul>
+      <button id="closeModal">Close</button>
+  </div>
+  
   </main>
   <div class="button-container">
     <button id="myButton1">
@@ -146,7 +161,12 @@
     </button>
       <!-- Floating Background -->
       <div class="floating-bg"></div>
+      <div class="watermark" id="watermark">Press Ctrl+H to view shortcut keys</div>
+      <div id="screenshotBlock" class="screenshot-block"></div>
 </body>
+<!-- <script src="/JavaScript/blocker.js"></script> -->
+<script type="module" src="/JavaScript/dashboard.js" defer></script>
+<script src="/JavaScript/search-bar.js" defer></script>
 <script>
 document.getElementById('myButton1').addEventListener('click', function() {
   window.location.href = '/templates/profile.html';

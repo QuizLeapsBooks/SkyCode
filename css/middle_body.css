@@ -1,5 +1,3 @@
-
-
 main {
     padding: 20px;
     text-align: center;
@@ -9,7 +7,7 @@ main {
 main h1 {
     font-size: 2.5rem;
     color: #2c3e50;
-    margin-bottom: 30px
+    margin-bottom: 30px;
 }
 
 .search-bar {
@@ -40,7 +38,7 @@ main h1 {
     border-radius: 25px;
     cursor: pointer;
     margin-left: -50px;
-    transition: all 0.3s ease
+    transition: all 0.3s ease;
 }
 
 .search-bar button:hover {
@@ -184,7 +182,7 @@ background-color: orangered;
     pointer-events: none;
     background: radial-gradient(circle, rgb(15, 3, 248) 1px, transparent 1px);
     background-size: 50px 50px;
-    opacity: .3;
+    opacity: 1;
     animation: moveBg 30s linear infinite;
 }
 
@@ -262,3 +260,64 @@ background-color: orangered;
         transform: translate(20px, 20px);
     }
 }
+
+/* Shortcut Modal Styles */
+#shortcutModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background: #f8f9fa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    padding: 20px;
+}
+
+#shortcutModal.show {
+    display: block;
+}
+
+#shortcutModal h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+
+#shortcutModal ul {
+    list-style: none;
+    padding: 0;
+}
+
+#shortcutModal ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+#closeModal {
+    display: block;
+    margin: 20px auto 0;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#closeModal:hover {
+    background: #0056b3;
+}
+
+/* Hide watermark on mobile devices */
+@media (max-width: 768px) {
+    #watermark {
+      display: none;
+    }
+  }
+  
