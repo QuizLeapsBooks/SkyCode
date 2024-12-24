@@ -9,14 +9,14 @@
     <meta name="author" content="S-Code Team">
     <title>S-Code | Welcome</title>
     <link rel="stylesheet" href="css/index.css">
-    <script src="/JavaScript/blocker.js"></script>
+    <script src="JavaScript/blocker.js"></script>
 </head>
 
 <body>
     <!-- Header Section -->
     <header>
         <div class="logo">
-            <img src="image.png" alt="S-Code Logo" class="animate-logo">
+            <img src="templates/image.png" alt="S-Code Logo" class="animate-logo">
         </div>
         <div class="auth-buttons">
             <button id="signup" class="neon-button">Sign Up</button>
@@ -78,10 +78,10 @@
     // Start typing when the page loads
     document.addEventListener("DOMContentLoaded", typeText);
     document.getElementById('signup').addEventListener('click', function () {
-        window.location.href = '/templates/sign-up.html';
+        window.location.href = 'templates/sign-up.html';
     });
     document.getElementById('signin').addEventListener('click', function () {
-        window.location.href = '/templates/sign-in.html';
+        window.location.href = 'templates/sign-in.html';
     });
 </script>
 
