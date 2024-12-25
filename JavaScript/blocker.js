@@ -8,15 +8,14 @@ document.addEventListener('contextmenu', (event) => {
 document.addEventListener('keydown', (event) => {
     // List of blocked key combinations
     const blockedKeys = [
-        { ctrl: true, key: 's' },  // Ctrl+S (Save)
-        { ctrl: true, key: 'u' },  // Ctrl+U (View Source)
-        { ctrl: true, shift: true, key: 'i' }, // Ctrl+Shift+I (Dev Tools)
-        { ctrl: true, shift: true, key: 'c' }, // Ctrl+Shift+C (Inspect Element)
-        { ctrl: true, shift: true, key: 'j' }, // Ctrl+Shift+J (Console)
-        { ctrl: true, key: 'p' },  // Ctrl+P (Print)
+        { ctrl: true, key: 's' },  
+        { ctrl: true, key: 'u' }, 
+        { ctrl: true, shift: true, key: 'i' },
+        { ctrl: true, shift: true, key: 'c' }, 
+        { ctrl: true, shift: true, key: 'j' }, 
+        { ctrl: true, key: 'p' },  
     ];
 
-    // Check if the key combination matches any in the blocked list
     for (const block of blockedKeys) {
         if (
             (block.ctrl && !event.ctrlKey) ||
@@ -30,7 +29,6 @@ document.addEventListener('keydown', (event) => {
         return;
     }
 
-    // Disable F12 (Dev Tools)
     if (event.key === 'F12') {
         event.preventDefault();
         alert('F12 is disabled!');
@@ -40,9 +38,9 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('keydown', (event) => {
     if (event.key === 'PrintScreen' || (event.ctrlKey && event.shiftKey && event.key === 'S')) {
         alert('Screenshots are discouraged!');
-        document.body.style.filter = 'blur(10px)'; // Blur content
+        document.body.style.filter = 'blur(10px)';
         setTimeout(() => {
-            document.body.style.filter = 'none'; // Remove blur after 2 seconds
+            document.body.style.filter = 'none';
         }, 2000);
     }
 });
@@ -53,31 +51,29 @@ document.addEventListener('keydown', (event) => {
         navigator.clipboard.writeText('Screenshots are not allowed!'); // Clear clipboard
     }
 });
-// Disable right-click context menu
+
 document.addEventListener('contextmenu', (event) => {
     event.preventDefault();
     alert('Right-click is disabled!');
 });
 
-// Handle shortcut keys
 document.addEventListener('keydown', (event) => {
     const isCtrlPressed = event.ctrlKey;
 
-    // Define shortcut actions
     const shortcutActions = {
-        '1': () => window.location.href = '/templates/html-compresser.html',
-        '2': () => window.location.href = '/templates/css-compress.html',
-        '3': () => window.location.href = '/templates/javascript-compress.html',
-        '4': () => window.location.href = '/templates/python-compress.html',
-        '5': () => window.location.href = '/templates/java-compress.html',
-        '6': () => window.location.href = '/templates/c-compress.html',
-        '7': () => window.location.href = '/templates/c++-compress.html',
-        '8': () => window.location.href = '/templates/php-compress.html',
+        '1': () => window.location.href = 'https://quizleapsbooks.github.io/SkyCode/templates/html-compresser.html',
+        '2': () => window.location.href = 'https://quizleapsbooks.github.io/SkyCode/templates/css-compress.html',
+        '3': () => window.location.href = 'https://quizleapsbooks.github.io/SkyCode/templates/javascript-compress.html',
+        '4': () => window.location.href = 'https://quizleapsbooks.github.io/SkyCode/templates/python-compress.html',
+        '5': () => window.location.href = 'https://quizleapsbooks.github.io/SkyCode/templates/java-compress.html',
+        '6': () => window.location.href = 'https://quizleapsbooks.github.io/SkyCode/templates/c-compress.html',
+        '7': () => window.location.href = 'https://quizleapsbooks.github.io/SkyCode/templates/c++-compress.html',
+        '8': () => window.location.href = 'https://quizleapsbooks.github.io/SkyCode/templates/php-compress.html',
     };
 
     if (isCtrlPressed && shortcutActions[event.key]) {
-        event.preventDefault(); // Prevent default browser actions
-        shortcutActions[event.key](); // Trigger shortcut action
+        event.preventDefault();
+        shortcutActions[event.key](); 
     }
 
     // Show modal with shortcut keys on Ctrl + H
@@ -87,22 +83,20 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-// Close modal
 document.getElementById('closeModal').addEventListener('click', () => {
     document.getElementById('shortcutModal').classList.remove('show');
 });
 
 window.addEventListener('resize', toggleWatermarkVisibility);
 
-// Function to toggle watermark visibility based on screen size
 function toggleWatermarkVisibility() {
   const watermark = document.getElementById('watermark');
   if (window.innerWidth > 768) {
-    watermark.style.display = 'block'; // Show watermark on PC
+    watermark.style.display = 'block';
   } else {
-    watermark.style.display = 'none'; // Hide watermark on mobile
+    watermark.style.display = 'none'; 
   }
 }
 
-// Initial call to set the correct state
+
 toggleWatermarkVisibility();

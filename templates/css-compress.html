@@ -8,17 +8,16 @@
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="C Code Compressor - S-Code">
   <meta property="og:description" content="Compress and optimize your CSS code effortlessly with S-Code's C Code Compressor.">
-  <meta property="og:url" content="https://yourwebsite.com/templates/css-compress.html">
-  <meta property="og:image" content="https://yourwebsite.com/assets/css-compressor-thumbnail.png">
+  <meta property="og:url" content="https://quizleapsbooks.github.io/SkyCode/templates/css-compress.html">
+  <meta property="og:image" content="https://quizleapsbooks.github.io/SkyCode/templates/image.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="C Code Compressor - S-Code">
   <meta name="twitter:description" content="Compress and optimize your CSS code effortlessly with S-Code's C Code Compressor.">
-  <meta name="twitter:image" content="/templates/image.png">
+  <meta name="twitter:image" content="https://quizleapsbooks.github.io/SkyCode/templates/image.png">
   <title>CSS Compressor | S-Code</title>
-  <link rel="stylesheet" href="/css/header-compressor.css">
+  <link rel="stylesheet" href="https://quizleapsbooks.github.io/SkyCode/css/header-compressor.css">
   <style>
-    /* Body Styling */
     body {
       margin: 0;
       padding: 0;
@@ -31,7 +30,6 @@
       color: #fff;
     }
 
-    /* Container Styling */
     .container {
       width: 90%;
       max-width: 800px;
@@ -44,7 +42,6 @@
       animation: fadeIn 1s ease-out;
     }
 
-    /* Headings Styling */
     h1 {
       font-size: 2.5rem;
       margin-bottom: 20px;
@@ -57,7 +54,6 @@
       color: #dfe6e9;
     }
 
-    /* Textarea Styling */
     textarea {
       width: 100%;
       height: 150px;
@@ -78,7 +74,6 @@
       border: 1px solid #ffffff33;
     }
 
-    /* Button Styling */
     button {
       width: 100%;
       padding: 15px;
@@ -99,7 +94,6 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       h1 {
         font-size: 2rem;
@@ -110,7 +104,6 @@
       }
     }
 
-    /* Animation */
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -132,15 +125,15 @@
           ☰
         </button>
         <ul class="nav-links">
-          <li><a href="/templates/dashboard.html" title="Home">Home</a></li>
-          <li><a href="/templates/html-compresser.html" title="HTML Compressor">HTML</a></li>
-          <li><a href="/templates/css-compress.html" title="CSS Compressor">CSS</a></li>
-          <li><a href="/templates/javascript-compress.html" title="JavaScript Compressor">JavaScript</a></li>
-          <li><a href="/templates/python-compress.html" title="Python Compressor">Python</a></li>
-          <li><a href="/templates/java-compress.html" title="Java Compressor">Java</a></li>
-          <li><a href="/templates/c-compress.html" title="C Compressor">C</a></li>
-          <li><a href="/templates/c++-compress.html" title="C++ Compressor">C++</a></li>
-          <li><a href="/templates/php-compress.html" title="PHP Compressor">PHP</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/dashboard.html" title="Home">Home</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/html-compresser.html" title="HTML Compressor">HTML</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/css-compress.html" title="CSS Compressor">CSS</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/javascript-compress.html" title="JavaScript Compressor">JavaScript</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/python-compress.html" title="Python Compressor">Python</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/java-compress.html" title="Java Compressor">Java</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/c-compress.html" title="C Compressor">C</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/c++-compress.html" title="C++ Compressor">C++</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/php-compress.html" title="PHP Compressor">PHP</a></li>
           <li><button id="logoutButton" title="Logout">Logout</button></li>
         </ul>
       </div>
@@ -158,36 +151,27 @@
   <script>
     document.getElementById('compressButton').addEventListener('click', () => {
       const inputCode = document.getElementById('inputCode').value;
-
-      // Compress CSS
       const compressedCode = inputCode
-        .replace(/\/\*[\s\S]*?\*\//g, '') // Remove multi-line comments
-        .replace(/\s{2,}/g, ' ')         // Replace multiple spaces with a single space
-        .replace(/\n+/g, '')             // Remove line breaks
-        .replace(/\s*([{}:;,])\s*/g, '$1') // Remove spaces around special characters
-        .replace(/;\}/g, '}')            // Remove unnecessary semicolons before closing braces
-        .trim();                         // Trim leading/trailing spaces
-
-      // Display compressed CSS
+        .replace(/\/\*[\s\S]*?\*\//g, '')
+        .replace(/\s{2,}/g, ' ')
+        .replace(/\n+/g, '')
+        .replace(/\s*([{}:;,])\s*/g, '$1')
+        .replace(/;\}/g, '}')
+        .trim();
       document.getElementById('outputCode').value = compressedCode;
     });
   </script>
   <script>
     document.getElementById('copyButton').addEventListener('click', () => {
-  const outputCode = document.getElementById('outputCode');
-  
-  // Select the text in the textarea
-  outputCode.select();
-  outputCode.setSelectionRange(0, 99999); // For mobile devices
-
-  // Copy the text
-  navigator.clipboard.writeText(outputCode.value)
-    .then(() => alert('Copied to clipboard!'))
-    .catch(err => alert('Failed to copy: ' + err));
-});
-
-</script>
-<script type="module" src="/JavaScript/dashboard.js"></script>
-<script src="/JavaScript/blocker.js"></script>
+      const outputCode = document.getElementById('outputCode');
+      outputCode.select();
+      outputCode.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(outputCode.value)
+        .then(() => alert('Copied to clipboard!'))
+        .catch(err => alert('Failed to copy: ' + err));
+    });
+  </script>
+  <script type="module" src="https://quizleapsbooks.github.io/SkyCode/JavaScript/dashboard.js"></script>
+  <script src="https://quizleapsbooks.github.io/SkyCode/JavaScript/blocker.js"></script>
 </body>
 </html>

@@ -314,7 +314,6 @@ background-color: orangered;
     background: #0056b3;
 }
 
-/* Hide watermark on mobile devices */
 @media (max-width: 768px) {
     #watermark {
       display: none;

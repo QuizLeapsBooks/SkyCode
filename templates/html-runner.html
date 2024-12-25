@@ -7,10 +7,10 @@
     <!-- Link to CodeMirror CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
     <!-- Link to Custom CSS -->
-    <link rel="stylesheet" href="/css/styles_html.css">
-    <link rel="stylesheet" href="/css/header.css">
-    <script type="module" src="/JavaScript/dashboard.js"></script>
-    <script src="/JavaScript/blocker.js"></script>
+    <link rel="stylesheet" href="https://quizleapsbooks.github.io/SkyCode/css/styles_html.css">
+    <link rel="stylesheet" href="https://quizleapsbooks.github.io/SkyCode/css/header.css">
+    <script type="module" src="https://quizleapsbooks.github.io/SkyCode/JavaScript/dashboard.js"></script>
+    <script src="https://quizleapsbooks.github.io/SkyCode/JavaScript/blocker.js"></script>
 </head>
 <body>
     <header>
@@ -21,15 +21,15 @@
               ☰
             </button>
             <ul class="nav-links">
-              <li><a href="/templates/dashboard.html" title="Home">Home</a></li>
-              <li><a href="/templates/html-compresser.html" title="HTML Compressor">HTML</a></li>
-              <li><a href="/templates/css-compress.html" title="CSS Compressor">CSS</a></li>
-              <li><a href="/templates/javascript-compress.html" title="JavaScript Compressor">JavaScript</a></li>
-              <li><a href="/templates/python-compress.html" title="Python Compressor">Python</a></li>
-              <li><a href="/templates/java-compress.html" title="Java Compressor">Java</a></li>
-              <li><a href="/templates/c-compress.html" title="C Compressor">C</a></li>
-              <li><a href="/templates/c++-compress.html" title="C++ Compressor">C++</a></li>
-              <li><a href="/templates/php-compress.html" title="PHP Compressor">PHP</a></li>
+              <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/dashboard.html" title="Home">Home</a></li>
+              <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/html-compresser.html" title="HTML Compressor">HTML</a></li>
+              <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/css-compress.html" title="CSS Compressor">CSS</a></li>
+              <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/javascript-compress.html" title="JavaScript Compressor">JavaScript</a></li>
+              <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/python-compress.html" title="Python Compressor">Python</a></li>
+              <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/java-compress.html" title="Java Compressor">Java</a></li>
+              <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/c-compress.html" title="C Compressor">C</a></li>
+              <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/c++-compress.html" title="C++ Compressor">C++</a></li>
+              <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/php-compress.html" title="PHP Compressor">PHP</a></li>
               <li><button id="logoutButton" title="Logout">Logout</button></li>
             </ul>
           </div>
@@ -51,23 +51,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/htmlmixed/htmlmixed.min.js"></script>
   <!-- Link to Custom JS -->
-  <script>// Initialize CodeMirror
+  <script>
     const editor = CodeMirror.fromTextArea(document.getElementById("html-code"), {
-        mode: "htmlmixed", // Syntax highlighting mode
-        theme: "default", // Theme for CodeMirror
-        lineNumbers: true, // Show line numbers
-        matchBrackets: true, // Highlight matching brackets
-        autoCloseTags: true, // Automatically close HTML tags
+        mode: "htmlmixed", 
+        theme: "default",
+        lineNumbers: true, 
+        matchBrackets: true, 
+        autoCloseTags: true, 
     });
     
     // Selecting elements
     const runButton = document.getElementById("run-btn");
     const output = document.getElementById("output");
     
-    // Add event listener to the "Run" button
+    //  "Run" button
     runButton.addEventListener("click", () => {
-        const code = editor.getValue(); // Get the HTML code from CodeMirror
-        output.srcdoc = code; // Set it as the iframe's content
+        const code = editor.getValue(); 
+        output.srcdoc = code; 
     });
     
     

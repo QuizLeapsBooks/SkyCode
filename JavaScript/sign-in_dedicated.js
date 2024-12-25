@@ -52,7 +52,7 @@ document.getElementById("submitSignIn").addEventListener("click", async () => {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       localStorage.setItem("loggedInUserId", userCredential.user.uid);
       showMessage("Logged in Successfully", "signInMessage", false);
-      setTimeout(() => location.replace("/templates/dashboard.html"), 2000);
+      setTimeout(() => location.replace("https://quizleapsbooks.github.io/SkyCode/templates/dashboard.html"), 2000);
     } catch (error) {
       console.error(error);
       showMessage("Login Failed. Email or Password is incorrect.", "signInMessage");

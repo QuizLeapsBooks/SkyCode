@@ -9,17 +9,16 @@
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="C Code Compressor - S-Code">
   <meta property="og:description" content="Compress and optimize your C code effortlessly with S-Code's C Code Compressor.">
-  <meta property="og:url" content="https://yourwebsite.com/templates/c-compress.html">
+  <meta property="og:url" content="https://quizleapsbooks.github.io/SkyCode/templates/c-compress.html">
   <meta property="og:image" content="/templates/image.png">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="C Code Compressor - S-Code">
   <meta name="twitter:description" content="Compress and optimize your C code effortlessly with S-Code's C Code Compressor.">
-  <meta name="twitter:image" content="https://yourwebsite.com/assets/c-compressor-thumbnail.png">
+  <meta name="twitter:image" content="https://quizleapsbooks.github.io/SkyCode/templates/image.png">
   <title>C Code Compressor - Optimize Your C Code | S-Code</title>
-  <link rel="stylesheet" href="/css/header-compressor.css">
+  <link rel="stylesheet" href="https://quizleapsbooks.github.io/SkyCode/css/header-compressor.css">
   <style>
-    /* Global Styling */
     body {
       margin: 0;
       padding: 0;
@@ -32,7 +31,6 @@
       color: #ffffff;
     }
 
-    /* Main Container */
     .container {
       width: 90%;
       max-width: 800px;
@@ -57,7 +55,6 @@
       color: #dfe6e9;
     }
 
-    /* Text Areas */
     textarea {
       width: 100%;
       height: 150px;
@@ -79,7 +76,6 @@
       border: 1px solid #ffffff33;
     }
 
-    /* Button Styling */
     button {
       width: 100%;
       padding: 15px;
@@ -100,7 +96,6 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
       h1 {
         font-size: 2rem;
@@ -111,7 +106,6 @@
       }
     }
 
-    /* Animation */
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -133,15 +127,15 @@
           ☰
         </button>
         <ul class="nav-links">
-          <li><a href="/templates/dashboard.html" title="Home">Home</a></li>
-          <li><a href="/templates/html-compresser.html" title="HTML Compressor">HTML</a></li>
-          <li><a href="/templates/css-compress.html" title="CSS Compressor">CSS</a></li>
-          <li><a href="/templates/javascript-compress.html" title="JavaScript Compressor">JavaScript</a></li>
-          <li><a href="/templates/python-compress.html" title="Python Compressor">Python</a></li>
-          <li><a href="/templates/java-compress.html" title="Java Compressor">Java</a></li>
-          <li><a href="/templates/c-compress.html" title="C Compressor">C</a></li>
-          <li><a href="/templates/c++-compress.html" title="C++ Compressor">C++</a></li>
-          <li><a href="/templates/php-compress.html" title="PHP Compressor">PHP</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/dashboard.html" title="Home">Home</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/html-compresser.html" title="HTML Compressor">HTML</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/css-compress.html" title="CSS Compressor">CSS</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/javascript-compress.html" title="JavaScript Compressor">JavaScript</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/python-compress.html" title="Python Compressor">Python</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/java-compress.html" title="Java Compressor">Java</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/c-compress.html" title="C Compressor">C</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/c++-compress.html" title="C++ Compressor">C++</a></li>
+          <li><a href="https://quizleapsbooks.github.io/SkyCode/templates/php-compress.html" title="PHP Compressor">PHP</a></li>
           <li><button id="logoutButton" title="Logout">Logout</button></li>
         </ul>
       </div>
@@ -159,37 +153,29 @@
   <script>
     document.getElementById('compressButton').addEventListener('click', () => {
       const inputCode = document.getElementById('inputCode').value;
-
-      // Compress C Code
       const compressedCode = inputCode
-        .split('\n')                                // Split code into lines
-        .map(line => line.trim())                   // Trim leading and trailing spaces
-        .filter(line =>                             // Filter out empty lines and comments
+        .split('\n')
+        .map(line => line.trim())
+        .filter(line =>
           line &&
-          !line.startsWith('//') &&                 // Single-line comments
-          !line.startsWith('/*') &&                 // Multi-line comment starts
-          !line.endsWith('*/')                      // Multi-line comment ends
+          !line.startsWith('//') &&
+          !line.startsWith('/*') &&
+          !line.endsWith('*/')
         )
-        .join(' ');                                 // Join all lines into a single line
-
-      // Display compressed C code
+        .join(' ');
       document.getElementById('outputCode').value = compressedCode;
     });
 
     document.getElementById('copyButton').addEventListener('click', () => {
       const outputCode = document.getElementById('outputCode');
-      
-      // Select the text in the textarea
       outputCode.select();
-      outputCode.setSelectionRange(0, 99999); // For mobile devices
-    
-      // Copy the text
+      outputCode.setSelectionRange(0, 99999);
       navigator.clipboard.writeText(outputCode.value)
         .then(() => alert('Copied to clipboard!'))
         .catch(err => alert('Failed to copy: ' + err));
     });
   </script>
-  <script type="module" src="/JavaScript/dashboard.js"></script>
-  <script src="/JavaScript/blocker.js"></script>
+  <script type="module" src="https://quizleapsbooks.github.io/SkyCode/JavaScript/dashboard.js"></script>
+  <script src="https://quizleapsbooks.github.io/SkyCode/JavaScript/blocker.js"></script>
 </body>
 </html>

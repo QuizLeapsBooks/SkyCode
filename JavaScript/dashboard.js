@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       // User is not logged in, redirect to the login page
       localStorage.removeItem("loggedInUserId");
-      window.location.href = "/index.html";
+      window.location.href = "https://quizleapsbooks.github.io/SkyCode/index.html";
     }
   });
 
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     signOut(auth)
       .then(() => {
         localStorage.removeItem("loggedInUserId");
-        window.location.href = "/index.html"; // Redirect to login page on logout
+        window.location.href = "https://quizleapsbooks.github.io/SkyCode/index.html"; // Redirect to login page on logout
       })
       .catch((error) => {
         console.log("Error during logout:", error);
