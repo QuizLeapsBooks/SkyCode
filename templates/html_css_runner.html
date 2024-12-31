@@ -11,7 +11,7 @@
     <meta property="og:title" content="Online HTML & CSS Editor - S-Code">
     <meta property="og:description" content="Edit and run your HTML and CSS code instantly with S-Code's online HTML & CSS editor.">
     <meta property="og:url" content="https://quizleapsbooks.github.io/SkyCode/templates/html_css_runner.html">
-    <meta property="og:image" content="https://quizleapsbooks.github.io/SkyCode/templates/image.png">
+  <meta property="og:image" content="https://quizleapsbooks.github.io/SkyCode/templates/image.png">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Online HTML & CSS Editor - S-Code">
@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="https://quizleapsbooks.github.io/SkyCode/css/CSS_html_css.css">
     <script type="module" src="https://quizleapsbooks.github.io/SkyCode/JavaScript/dashboard.js"></script>
     <script src="https://quizleapsbooks.github.io/SkyCode/JavaScript/blocker.js"></script>
-    <script src="https://quizleapsbooks.github.io/SkyCode/JavaScript/script_html-css.js"></script>
+    <script src="https://quizleapsbooks.github.io/SkyCode/JavaScript/script_html-css.js" defer></script>
     <link rel="stylesheet" href="https://quizleapsbooks.github.io/SkyCode/css/header.css">
-
+    <link rel="icon" type="image/png" sizes="32x32" href="https://quizleapsbooks.github.io/SkyCode/templates/image.png" media="(prefers-color-scheme: light)"/>
 </head>
 <body>
   <header>
@@ -47,13 +47,13 @@
       </div>
     </nav>
   </header>
-  
-        <div class="editor-container">
-            <textarea id="html-code" class="editor" placeholder="Write your HTML here"></textarea>
-            <textarea id="css-code" class="editor hidden" placeholder="Write your CSS here"></textarea>
-        </div>
-        <button id="run-btn">Run</button>
-        <iframe id="output" sandbox="allow-scripts"></iframe>
-    </main>
+  <main>
+    <div class="editor-container">
+        <textarea id="html-code" class="editor" placeholder="Write your HTML here"></textarea>
+        <textarea id="css-code" class="editor hidden" placeholder="Write your CSS here"></textarea>
+    </div>
+    <button id="run-btn">Run</button>
+    <iframe id="output" sandbox="allow-scripts"></iframe>
+  </main>
 </body>
 </html>
