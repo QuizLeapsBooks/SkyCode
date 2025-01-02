@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getFirestore, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+import { getStorage, ref, uploadBytes, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-storage.js";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -14,6 +15,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const storage = getStorage(app);
 
 // Get logged-in user's ID
 const userId = localStorage.getItem("loggedInUserId");
@@ -55,22 +57,28 @@ function setupProfileImageUpload() {
     const file = event.target.files[0];
     if (!file) return;
 
+    const storageRef = ref(storage, `profile-images/${userId}`);
     try {
-      const imageURL = URL.createObjectURL(file); // Temporary URL for preview
-      profileImage.src = imageURL;
+      await uploadBytes(storageRef, file);
+      const downloadURL = await getDownloadURL(storageRef);
 
-      // Save the new profile image URL in Firestore
-      await updateDoc(doc(db, "users", userId), { profileImage: imageURL });
+      // Update Firestore with the download URL
+      await updateDoc(doc(db, "users", userId), { profileImage: downloadURL });
+
+      profileImage.src = downloadURL; // Update image preview
       alert("Profile image updated!");
     } catch (error) {
-      console.error("Error updating profile image:", error);
+      console.error("Error uploading profile image:", error);
     }
   });
 
   removeButton.addEventListener("click", async () => {
+    const storageRef = ref(storage, `profile-images/${userId}`);
     try {
-      profileImage.src = "https://via.placeholder.com/150";
+      await deleteObject(storageRef); // Remove image from storage
       await updateDoc(doc(db, "users", userId), { profileImage: "" });
+
+      profileImage.src = "https://via.placeholder.com/150";
       alert("Profile image removed!");
     } catch (error) {
       console.error("Error removing profile image:", error);
