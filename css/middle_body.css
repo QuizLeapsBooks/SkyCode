@@ -185,7 +185,23 @@ background-color: orangered;
     opacity: 1;
     animation: moveBg 30s linear infinite;
 }
-
+#myButton2 {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 1000px;
+    cursor: pointer;
+    background: #ff7e5f;
+    transition: background-color 0.3s;
+    animation: pulse 2s infinite;
+}
+#myButton2:hover{
+background-color: orangered;
+}
 @keyframes moveBg {
     from {
         background-position: 0 0;
