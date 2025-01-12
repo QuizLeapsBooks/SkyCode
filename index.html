@@ -87,6 +87,15 @@
     document.getElementById('signin').addEventListener('click', function () {
         window.location.href = 'templates/sign-in.html';
     });
+
+        // To change the title
+    document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+            document.title = "Come back! 🥺";
+        } else {
+            document.title = "S-Code | Welcome";
+        }
+    });
 </script>
 
 </html>
