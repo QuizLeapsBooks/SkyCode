@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explore more features of SkyCode, including the upcoming AI tool, contact options, complaint box, and mobile app download." />
+  <meta name="keywords" content="SkyCode, features, AI, contact us, complaint box, mobile app, Android app, download" />
+  <meta name="author" content="Shubham Singh" />
+  <meta property="og:title" content="SkyCode Options - Explore More Features" />
+  <meta property="og:description" content="Explore more features of SkyCode, including the upcoming AI tool, contact options, complaint box, and mobile app download." />
+  <title>SkyCode Options</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <script src="https://quizleapsbooks.github.io/SkyCode/JavaScript/blocker.js"></script>
+  <script type="module" src="https://quizleapsbooks.github.io/SkyCode/JavaScript/dashboard.js" defer></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #f7c6ff, #c6d8ff);
+      color: #333;
+      padding: 20px;
+    }
+
+    /* Header Styling */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background: linear-gradient(135deg, #e91e63, #673ab7);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .header .title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .header .title span {
+      color: #f7c6ff; /* Light color for subtle effect */
+    }
+
+    /* Welcome and Logout Section */
+    .header .user-info {
+      color: white;
+      text-align: right;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header .user-info h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .header button {
+      background: #673ab7;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .header button:hover {
+      background: #5e35b1;
+      transform: translateY(-3px);
+    }
+
+    .header button:active {
+      transform: translateY(2px);
+    }
+
+    /* New CSS to set the cards side by side */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .card {
+      position: relative;
+      width: 190px;
+      height: 254px;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 12px;
+      gap: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      left: -5px;
+      margin: auto;
+      width: 200px;
+      height: 264px;
+      border-radius: 10px;
+      background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+      z-index: -10;
+      pointer-events: none;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .card::after {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+      transform: translate3d(0, 0, 0) scale(0.95);
+      filter: blur(20px);
+    }
+
+    .heading {
+      font-size: 20px;
+      text-transform: capitalize;
+      font-weight: 700;
+    }
+
+    .card p:not(.heading) {
+      font-size: 14px;
+    }
+
+    .card p:last-child {
+      color: #e81cff;
+      font-weight: 600;
+    }
+
+    .card:hover::after {
+      filter: blur(30px);
+    }
+
+    .card:hover::before {
+      transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header with Home Button and Logout Option -->
+  <div class="header">
+    <div class="title">Explore <span>More</span> SkyCode Features</div>
+    
+    <div class="user-info">
+      <h2>Welcome, <span id="loggedUserfname">User</span></h2>
+      <!-- Home Button -->
+      <button onclick="window.location.href='https://quizleapsbooks.github.io/SkyCode/index.html'">Home</button>
+      <!-- Logout Button -->
+      <button id="logoutButton" title="Logout" onclick="logoutFunction()">Logout</button>
+    </div>
+  </div>
+
+  <!-- Cards Section -->
+  <div class="cards">
+    <div class="card">
+      <h2>SkyCode AI</h2>
+      <p>Coming Soon. Let AI help you write and debug your HTML, CSS, and JS code instantly.</p>
+      <button onclick="location.href='#'">Coming Soon</button>
+    </div>
+
+    <div class="card">
+      <h2>Contact Us</h2>
+      <p>Reach out for queries, feedback, or partnership ideas. We're here to help!</p>
+      <button onclick="location.href='https://quizleapsbooks.github.io/SkyCode/templates/contact.html'">Get in Touch</button>
+    </div>
+
+    <div class="card">
+      <h2>Android App</h2>
+      <p>Download the SkyCode Android App and code on the go anytime, anywhere (Only For Android).</p>
+      <button type="button">
+        <a href="https://quizleapsbooks.github.io/SkyCode/templates/S-Code%201.0.zip" download="S-Code 1.0.zip">Download File</a>
+      </button>
+    </div>
+
+    <div class="card">
+      <h2>Complaint Box</h2>
+      <p>Facing issues or want to suggest a fix? Use the complaint box to tell us.</p>
+      <button onclick="location.href='https://quizleapsbooks.github.io/SkyCode/templates/contact.html'">Submit Complaint</button>
+    </div>
+
+    <div class="card">
+      <h2>Profile</h2>
+      <p>Tap to open your Profile Page.</p>
+      <button onclick="location.href='https://quizleapsbooks.github.io/SkyCode/templates/profile.html'">View Profile</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to handle logout logic
+    function logoutFunction() {
+      alert("You have successfully logged out.");
+      // You can add additional logic here to handle session end or redirect
+      window.location.href = 'https://quizleapsbooks.github.io/SkyCode/index.html';
+    }
+  </script>
+</body>
+</html>

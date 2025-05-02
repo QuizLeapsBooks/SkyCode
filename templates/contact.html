@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact & Complaint - SkyCode</title>
+  <link rel="stylesheet" href="/css/contact.css">
+  <script type="module" src="https://quizleapsbooks.github.io/SkyCode/JavaScript/dashboard.js" defer></script>
+  <meta name="description" content="Reach out to SkyCode for inquiries, complaints, or issues. Submit feedback and suggestions, or report bugs easily." />
+  <meta name="keywords" content="contact us, complaint, feedback, bug report, feature request, UI issue, SkyCode" />
+  <meta name="author" content="Shubham Singh" />
+  <meta property="og:title" content="Contact & Complaint - SkyCode" />
+  <meta property="og:description" content="Reach out to SkyCode for inquiries, complaints, or issues. Submit feedback and suggestions, or report bugs easily." />
+</head>
+<body>
+  <div class="container">
+    <div class="form-toggle">
+      <button onclick="switchForm('contact')">📩 Contact Us</button>
+      <button onclick="switchForm('complaint')">🚨 Complaint</button>
+    </div>
+
+    <!-- ✅ Contact Form -->
+    <form id="contact-form" action="https://formspree.io/f/mgvkaalv" method="POST">
+      <h2>📩 Contact Us</h2>
+      <label>Your Name</label>
+      <input type="text" name="name" required />
+
+      <label>Your Email</label>
+      <input type="email" name="_replyto" required />
+
+      <label>Your Message</label>
+      <textarea name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message 🚀</button>
+    </form>
+
+    <!-- 🚨 Complaint Form -->
+    <form id="complaint-form" action="https://formspree.io/f/mgvkaalv" method="POST" style="display: none;">
+      <h2>🚨 Complaint / Report</h2>
+      <label>Your Name</label>
+      <input type="text" name="issue-name" required />
+
+      <label>Your Email</label>
+      <input type="email" name="issue-email" required />
+
+      <label>Type of Issue</label>
+      <select name="issue-type" required>
+        <option value="">--Select--</option>
+        <option value="Bug">🐛 Bug</option>
+        <option value="Feature Request">💡 Feature Request</option>
+        <option value="UI Issue">🎨 UI Problem</option>
+        <option value="Other">📝 Other</option>
+      </select>
+
+      <label>Describe the Issue</label>
+      <textarea name="issue-description" rows="5" required></textarea>
+
+      <button type="submit">Submit Complaint ⚠️</button>
+    </form>
+  </div>
+
+  <div class="button-container">
+    <button id="myButton1">
+        Home
+    </button>
+
+  <script>
+    function switchForm(formType) {
+      document.getElementById('contact-form').style.display = formType === 'contact' ? 'block' : 'none';
+      document.getElementById('complaint-form').style.display = formType === 'complaint' ? 'block' : 'none';
+    }
+
+    document.getElementById('myButton1').addEventListener('click', function() {
+  window.location.href = 'https://quizleapsbooks.github.io/SkyCode/templates/dashboard.html';
+});
+  </script>
+</body>
+</html>
