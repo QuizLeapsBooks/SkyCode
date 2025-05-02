@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
   
-    const API_KEY = 'sk-Lwm0kqdC2TKI125E8xTVoNrVJs2gZ-QFd14k3qU8ETT3BlbkFJjjZJFDSS_FHJuIWhFRO3bnn4ApkFAFJxveG49ZDXcA';
+    const API_KEY = 'API';
   
     function addMessage(message, sender) {
       const msgDiv = document.createElement('div');
