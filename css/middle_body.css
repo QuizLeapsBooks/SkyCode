@@ -337,7 +337,7 @@ background-color: orangered;
   }
 
 
-  .main-footer {
+ .main-footer {
   background: linear-gradient(135deg, #a770ef, #cf8bf3, #fdb99b);
   color: white;
   padding: 40px 20px 20px;
@@ -434,5 +434,6 @@ background-color: orangered;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 15px;
 }
+
 
   
