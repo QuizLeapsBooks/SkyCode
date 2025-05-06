@@ -1,102 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="S-Code is a platform to code, run, and compress HTML, CSS, JavaScript, and more. Unlock the full experience by signing in!">
-    <meta name="keywords" content="S-Code, Code Editor, HTML Editor, CSS Runner, JavaScript Runner, Code Compressor">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1448064742208653"
-     crossorigin="anonymous"></script>
-    <meta name="google-site-verification" content="7wUR_TEypx8FYy94MuGLhXSib9pCgSpayBzVVFmrCg0" />
-    <meta name="author" content="S-Code Team">
-    <title>S-Code | Welcome</title>
-    <link rel="stylesheet" href="css/index.css">
-    <script src="JavaScript/blocker.js"></script>
-     <link rel="icon" type="image/png" sizes="32x32" href="https://quizleapsbooks.github.io/SkyCode/templates/image.png" media="(prefers-color-scheme: light)"/>
-    <meta name="google-adsense-account" content="ca-pub-1448064742208653">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="S-Code is a platform to code, run, and compress HTML, CSS, JavaScript, and more."/>
+  <meta name="keywords" content="S-Code, Code Editor, HTML Editor, CSS Runner, JavaScript Runner, Code Compressor"/>
+  <meta name="author" content="S-Code Team"/>
+  <title>S-Code | Welcome</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <script src="JavaScript/blocker.js" defer></script>
+  <link rel="icon" href="https://quizleapsbooks.github.io/SkyCode/templates/image.png" />
 </head>
-
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <img src="templates/image.png" alt="S-Code Logo" class="animate-logo">
+  <header>
+    <div class="logo">
+      <img src="templates/image.png" alt="S-Code Logo" class="animate-logo"/>
+    </div>
+    <div class="auth-buttons">
+      <button id="signup" class="neon-button">Sign Up</button>
+      <button id="signin" class="neon-button">Sign In</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="intro">
+        <h1 id="dynamic-text" class="neon-text"></h1>
+        <span class="cursor"></span>
+        <p class="tagline">Code, Run & Compress <br> HTML, CSS, JavaScript, and more.</p>
+        <p class="cta-text">Sign in to unlock all features!</p>
+      </div>
+
+      <hr class="gradient-line" />
+
+      <!-- What's New -->
+      <section class="whats-new">
+        <h2>🚀 What's New?</h2>
+        <ul>
+          <li>✔ Shortcut Key Support</li>
+          <li>✔ Better Code Compression</li>
+          <li>✔ Speed Boost by 20%</li>
+          <li>✔ Mobile Responsive UI</li>
+        </ul>
+      </section>
+
+      <!-- Features Section -->
+      <div class="features">
+        <div class="feature-card">
+          <h2>HTML Editor</h2>
+          <p>Run and test HTML code instantly.</p>
         </div>
-        <div class="auth-buttons">
-            <button id="signup" class="neon-button">Sign Up</button>
-            <button id="signin" class="neon-button">Sign In</button>
+        <div class="feature-card">
+          <h2>CSS & JS Runner</h2>
+          <p>Test and visualize designs interactively.</p>
         </div>
-    </header>
-
-    <!-- Main Section -->
-    <main>
-        <div class="container">
-            <div class="intro">
-                <h1 id="dynamic-text" class="neon-text"></h1>
-                <span class="cursor"></span>
-                <p class="tagline">Code, Run & Compress <br> HTML, CSS, JavaScript, and much more.</p>
-                <p class="cta-text">Sign in to unlock all features!</p>
-            </div>
-
-            <!-- Features Section -->
-            <div class="features">
-                <div title="Not-Allowed | Please Sign In/Up" class="feature-card">
-                    <h2>HTML Editor</h2>
-                    <p>Run and test HTML code instantly.</p>
-                </div>
-                <div title="Not-Allowed | Please Sign In/Up" class="feature-card">
-                    <h2>CSS & JS Runner</h2>
-                    <p>Test and visualize designs interactively.</p>
-                </div>
-                <div title="Not-Allowed | Please Sign In/Up" class="feature-card">
-                    <h2>Code Compressor</h2>
-                    <p>Minimize code to boost performance.</p>
-                </div>
-            </div>
+        <div class="feature-card">
+          <h2>Code Compressor</h2>
+          <p>Minimize code to boost performance.</p>
         </div>
-    </main>
+      </div>
 
-    <!-- Floating Background -->
-    <div class="floating-bg"></div>
+      <!-- Testimonials -->
+      <section class="testimonials">
+        <h2>💬 What Our Users Say</h2>
+        <div class="testimonial-slider">
+          <p>“S-Code is my go-to editor. It's fast and reliable.” – <strong>Aryan S.</strong></p>
+          <p>“Love the UI. The compressor is top-notch!” – <strong>Anjali P.</strong></p>
+          <p>“Helped me finish projects quickly. 🔥” – <strong>Rahul C.</strong></p>
+        </div>
+      </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 S-Code | All Rights Reserved</p>
-    </footer>
-</body>
-<script>
-    // Dynamic Typing Effect
+      <!-- Newsletter -->
+      <section class="newsletter">
+        <h2>📧 Stay Updated!</h2>
+        <p>Subscribe to get the latest features and updates from S-Code.</p>
+        <input type="email" placeholder="Enter your email" />
+        <button class="neon-button">Subscribe</button>
+      </section>
+    </div>
+  </main>
+
+  <div class="floating-bg"></div>
+
+  <footer>
+    <p>© 2025 S-Code | All Rights Reserved</p>
+    <div class="socials">
+      <a href="#">Instagram</a> |
+      <a href="#">GitHub</a> |
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
     const text = "Welcome to SkyCode";
     let index = 0;
-    const speed = 200; // Typing speed in ms
+    const speed = 150;
     const targetElement = document.getElementById("dynamic-text");
 
     function typeText() {
-        if (index < text.length) {
-            targetElement.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeText, speed);
-        }
+      if (index < text.length) {
+        targetElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeText, speed);
+      }
     }
 
-    // Start typing when the page loads
     document.addEventListener("DOMContentLoaded", typeText);
-    document.getElementById('signup').addEventListener('click', function () {
-        window.location.href = 'templates/sign-up.html';
+    document.getElementById("signup").addEventListener("click", () => {
+      window.location.href = "templates/sign-up.html";
     });
-    document.getElementById('signin').addEventListener('click', function () {
-        window.location.href = 'templates/sign-in.html';
+    document.getElementById("signin").addEventListener("click", () => {
+      window.location.href = "templates/sign-in.html";
     });
 
-        // To change the title
     document.addEventListener("visibilitychange", function () {
-        if (document.hidden) {
-            document.title = "Come back! 🥺";
-        } else {
-            document.title = "S-Code | Welcome";
-        }
+      document.title = document.hidden ? "Come back! 🥺" : "S-Code | Welcome";
     });
-</script>
-
+  </script>
+</body>
 </html>
